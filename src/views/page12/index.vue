@@ -16,6 +16,33 @@
     <div class="grid-content bg-purple">
       <el-button @click="save">保存</el-button>
     </div>
+     <!-- //  flex独占一行内 实现子元素等高 -->
+    <div class="card-row-flex">
+      <div class="col-lt"></div>
+      <div class="col-rt">
+        <div class="t1"></div>
+        <div class="t2"></div>
+      </div>
+    </div>
+    <div style="padding:20px"></div>
+    <!-- flex实现独占一行并且子元素按照数量均分 -->
+    <div class="card-row-flex">
+      <div class="col-item"></div>
+      <div class="col-item">
+        <div class="t1"></div>
+        <div class="t2"></div>
+      </div>
+      <div class="col-item"></div>
+    </div>
+    <div style="padding:20px"></div>
+    <!-- flex实现某列的子元素等高 -->
+    <div class="card-row-flex">
+      <div class="col-item-l"></div>
+      <div class="col-item-l">
+        <div class="i t4"></div>
+        <div class="i t5"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -166,4 +193,42 @@ export default {
 </script>
 
 <style scoped>
+.col-lt{
+  flex: 0 0 100px;
+  background: rgb(245, 161, 113);
+}
+.col-rt{
+  flex: 1 1 auto;
+}
+.card-row-flex{
+  display: flex;
+}
+.col-item{
+   flex: 1 1 auto;
+   background: rgb(134, 19, 250);
+}
+.t1{
+  background: #333;
+  height: 60px;
+}
+.t2{
+  background: #777;
+  height: 100px;
+}
+.col-item-l{
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 200px;
+}
+.i{
+  flex: 0 0 auto;
+  display: flex;
+}
+.t4{
+  background: red;
+}
+.t5{
+  background: rgb(245, 161, 113);
+}
 </style>
